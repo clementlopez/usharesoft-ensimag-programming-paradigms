@@ -1,0 +1,4 @@
+funcy==1.11
+python-dateutil==2.7.5
+six==1.11.0
+visidata==1.5
