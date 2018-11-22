@@ -6,7 +6,6 @@ def swap_index(elt_list, index):
 
 def bubble_sort(beers, key):
     beers_length = len(beers)
-    print(beers_length)
     for i in range(beers_length):
         for j, beer in enumerate(beers[i:]):
             ind = i + j
@@ -16,5 +15,5 @@ def bubble_sort(beers, key):
 with open("beer_list.json") as beers_json:
     beers = json.load(beers_json)
     bubble_sort(beers, "Tx_Alcool")
-    print("\n".join([str(x["Tx_Alcool"]) for x in beers]))
+    print(json.dumps(beers))
 
