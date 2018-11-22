@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+
+# functional programming uses small functions as the primary mean to express your program
+# a program is seen as a transformation of data: <data in> --- functions ---> <data out>
+
+# pure functions are highly preferred: functions that always return the same value for the same input
+
 import json
 
 def beer_sort(beers, beerCompare):
@@ -13,7 +20,4 @@ with open("beer_list.json") as f:
 
 beers_with_alcool = list(filter(lambda b: b['Tx_Alcool'] is not None, beers))
 
-print(beer_sort(beers_with_alcool, lambda b1, b2: b2['Tx_Alcool'] - b1['Tx_Alcool']))
-
-# functional programming uses small functions are the primary mean to express your program
-# pure functions are highly preferred: functions that always return the same value for the same input
+print(json.dumps(beer_sort(beers_with_alcool, lambda b1, b2: b2['Tx_Alcool'] - b1['Tx_Alcool'])))

@@ -1,3 +1,7 @@
+#!/usr/bin/env python3 
+
+# higher order functions: functions that take a function as parameter, or functions that return other functions. Funception.
+
 import json
 
 def beer_sort(beers, beerCompare):
@@ -20,5 +24,3 @@ with open("beer_list.json") as f:
 beers_with_alcool = list(filter(lambda b: b['Tx_Alcool'] is not None, beers))
 
 print_json(beer_sort(beers_with_alcool, beer_comparator('Tx_Alcool')))
-
-# higher order functions: functions that take a function as parameter, or functions that return other functions. Funception.

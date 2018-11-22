@@ -1,3 +1,8 @@
+#!/usr/bin/env python3 
+
+# function compositions: combining pure functions together to make a sum that's greater than its parts
+# function composition can be intimidating, and in the wrong hands can make the code extremely hard to understand. Great power comes great responsibilities.
+
 import json
 from funcy import compose, partial, curry
 
@@ -24,6 +29,3 @@ with open("beer_list.json") as f:
 beers_with_alcool = list(filter(lambda b: b['Tx_Alcool'] is not None, beers))
 
 compose(print_json, curry(sort_by_key)('Tx_Alcool'))(beers_with_alcool)
-
-# function compositions: combining pure functions together to make a sum that's greater than its parts
-# function composition can be intimidating, and in the wrong hands can make the code extremely hard to understand. Great power comes great responsibilities.
